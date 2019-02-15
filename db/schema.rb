@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190215171542) do
+ActiveRecord::Schema.define(version: 20190215174521) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20190215171542) do
   create_table "machines", force: :cascade do |t|
     t.string "location"
     t.bigint "owner_id"
+    t.integer "snack_id"
     t.index ["owner_id"], name: "index_machines_on_owner_id"
   end
 

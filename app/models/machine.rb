@@ -5,4 +5,9 @@ class Machine < ApplicationRecord
   has_many :machine_snacks
   has_many :snacks, through: :machine_snacks
 
+  def average_price
+    @snacks = Snack.where(machine_id: id)
+    @snacks.sum(&:price) / @snacks.count
+  end
+
 end

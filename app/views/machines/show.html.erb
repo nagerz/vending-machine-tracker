@@ -3,4 +3,6 @@
 <% @snacks.each do |snack| %>
   <p><%= snack.name %>: $<%= snack.price %></p>
 <% end %>
-<p>Average Price: $<%= @machine.average_price %>
+<% if @snacks.count > 0 %>
+<p>Average price: $<%= @machine.average_price %>
+<% end %>
